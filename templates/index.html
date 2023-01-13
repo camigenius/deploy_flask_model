@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Learning API-Camilo 🤖</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predicción Valor Casas Suburbios de Boston 🏠</h1>
+    <h3>Por favor Ingresa el valor de cada una de las Features</h3>
+    <img src="https://images.adsttc.com/media/images/6307/cf35/3362/c945/9554/9755/slideshow/cities-from-us-and-europe-seek-to-ban-fossil-fuels-in-new-buildings_2.jpg?1661456187" alt="casa_boston" width="300">
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="CRIM" placeholder="Crim" required="required" />
+        <input type="text" name="ZN" placeholder="Zn" required="required" />
+		<input type="text" name="INDUS" placeholder="Indus" required="required" />
+		<input type="text" name="CHAS" placeholder="Chas" required="required" />
+        <input type="text" name="NOX" placeholder="Nox" required="required" />
+        <input type="text" name="RM" placeholder="Rm" required="required" />
+        <input type="text" name="AGE" placeholder="Age" required="required" />
+        <input type="text" name="DIS" placeholder="Dis" required="required" />
+        <input type="text" name="RAD" placeholder="Rad" required="required" />
+        <input type="text" name="TAX" placeholder="Tax" required="required" />
+        <input type="text" name="PTRATIO" placeholder="Ptratio" required="required" />
+        <input type="text" name="B" placeholder="B" required="required" />
+        <input type="text" name="LSTAT" placeholder="Lstat" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Clic Para Predecir</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
